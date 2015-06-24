@@ -231,4 +231,28 @@ From the first equality we obtain
 
 which gives :math:`x=y`, and so on.
 
-The significance of the constant :math:`d` being equal to :math:`1` is simply that this gives the points of intersection of the plane with the coordinate axes.  Since :math:`a = b = c = 1`, :math:`d=1` gives our points as :math:`P = (1,0,0)`, :math:`Q = (0,1,0)`, and :math:`R = (0,0,1)`.
+The significance of the constant :math:`d` being equal to :math:`1` is partly that this gives the points of intersection of the plane with the coordinate axes.  Since :math:`a = b = c = 1`, :math:`d=1` gives our points as :math:`P = (1,0,0)`, :math:`Q = (0,1,0)`, and :math:`R = (0,0,1)`.
+
+But there is another thing.  Recall that we have the equation:
+
+.. math::
+
+    x + y + z = 1
+    
+    \mathbf{N} = \langle 1,1,1 \rangle
+
+Notice that if we normalize :math:`\mathbf{N}`:
+
+.. math::
+
+    \mathbf{\hat{n}} = \frac{1}{\sqrt{3}} \langle 1,1,1 \rangle
+
+Then the equation of the plane becomes
+
+.. math::
+
+    \frac{x}{\sqrt{3}} + \frac{y}{\sqrt{3}} + \frac{z}{\sqrt{3}} = \frac{1}{\sqrt{3}}
+
+It's the same plane.
+    
+But now this :math:`d` *is* the distance from the origin to the plane.

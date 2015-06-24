@@ -13,6 +13,9 @@ Contents:
    cross-product
    cross-product2
    vectors-planes
+   parametric-lines
    matrix-multiplication
+   matrix-inverse
+   kepler2
    projections
    matrix-projections

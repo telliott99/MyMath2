@@ -12,6 +12,10 @@ Contents:
    :maxdepth: 2
 
    vectors/index
+   differentiation/index
+   integration/index
+   integration-apps/index
+   surfaces/index
 
 
 Indices and tables
