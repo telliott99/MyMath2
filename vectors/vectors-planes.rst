@@ -123,9 +123,9 @@ Suppose we have :math:`P = (1,0,0)`, :math:`Q = (0,1,0)`, and :math:`R = (0,0,1)
 
 .. math::
 
-    \mathbf{u} = PQ = \langle 1, -1, 0 \rangle
+    \mathbf{u} = PQ = Q-P = (0,1,0) - (1,0,0) = \langle -1, 1, 0 \rangle
     
-    \mathbf{v} = PR = \langle 1, 0, -1 \rangle
+    \mathbf{v} = PR = R-P = (0,0,1) - (1,0,0) = \langle -1, 0, 1 \rangle
 
 As we said, any point in the plane can be described as a (unique) linear combination of these vectors.
 
@@ -141,8 +141,8 @@ To compute the cross product, set up the matrix and read off the terms.
 
     \begin{bmatrix} 
       \mathbf{\hat{i}}  &  \mathbf{\hat{j}}  &  \mathbf{\hat{k}} \\ 
-      1  &  -1 & 0 \\
-      1  &  0 & -1
+      -1  &  1 & 0 \\
+      -1  &  0 & 1
     \end{bmatrix}
 
 I get:
@@ -151,9 +151,9 @@ I get:
 
     \mathbf{N} = \langle 1, 1, 1 \rangle
 
-Now this normal vector does not describe one plane but a family of planes that are parallel to one another.  To specify the plane with our three points, we also need a single point in the plane.  Let's take :math:`P = (1,0,0)`.  
+This normal vector does not describe one single plane but rather a family of planes that are parallel to one another.  To specify a unique plane that contains these three points, we also need a fixed point in the plane.  Let's take :math:`P = (1,0,0)`.  
 
-All the points in the plane have coordinates :math:`x,y,z` *such that*, the vector from :math:`P` to :math:`(x,y,z)` is perpendicular to :math:`\mathbf{N}`.  That is, the dot product with :math:`\mathbf{N}` must be equal to zero.  Writing this out, the vector is:
+All the points in the plane have coordinates :math:`x,y,z` *such that*, the vector from :math:`P` to :math:`(x,y,z)` is perpendicular to :math:`\mathbf{N}`.  That is, the dot product with :math:`\mathbf{N}` must be equal to zero.  Writing this out, the general vector in the plane is:
 
 .. math::
 
@@ -179,7 +179,7 @@ We can easily verify that each of the points :math:`P = (1,0,0)`, :math:`Q = (0,
     
     \mathbf{v} = PR = \langle 1, 0, -1 \rangle
 
-both give a dot product of zero with :math:`\mathbf{N}`.
+each give a dot product of zero with :math:`\mathbf{N}`.
 
 The general formulation is that given a point :math:`P = (x_0,y_0,z_0)` and the normal vector :math:`\mathbf{N} = \langle a, b, c \rangle`, the equation of the plane is:
 
@@ -254,5 +254,5 @@ Then the equation of the plane becomes
     \frac{x}{\sqrt{3}} + \frac{y}{\sqrt{3}} + \frac{z}{\sqrt{3}} = \frac{1}{\sqrt{3}}
 
 It's the same plane.
-    
-But now this :math:`d` *is* the distance from the origin to the plane.
+
+If the equation of the plane is written with a *unit* normal vector, then :math:`d` is the distance from the origin to the plane.

@@ -16,6 +16,8 @@ We "divide and multiply" on the right by :math:`dx^2` to give
 
 .. math::
 
+    ds^2 = \frac{1}{dx^2} \ (dx^2 + dy^2) dx^2
+
     ds^2 = [1 + \frac{dy^2}{dx^2}] \ dx^2 
 
 then take the square root
@@ -54,6 +56,8 @@ By implicit differentiation, we easily obtain
 
 .. math::
 
+    2x \ dx + 2y \ dy = 0
+
     \frac{dy}{dx} = -\frac{x}{y} 
 
     (\frac{dy}{dx})^2 = \frac{x^2}{y^2} 
@@ -76,7 +80,7 @@ This can be solved by a trig substitution:
 
     x = R \sin t 
 
-    dx = R \cos t dt 
+    dx = R \cos t \ dt 
 
     \sqrt{R^2 - x^2} = R \cos t 
 
@@ -166,27 +170,13 @@ Remembering the factor of two we get :math:`1.4788`
 
 Not exactly pretty, but it works.  Check by numerical integration
 
-\begin{verbatim}
+.. sourcecode:: python
 
-import scipy
+    import scipy
+    g = lambda x: sqrt(1 + 4*x**2)
+    scipy.integrate.quad(g,0,1)
 
-f = lambda x: x**2
-
-scipy.integrate.quad(f,0,1)
-
-\end{verbatim}
-
-This check gives the expected result :math:` 0.33333..`
-
-\begin{verbatim}
-
-g = lambda x: sqrt(1 + 4*x**2)
-
-scipy.integrate.quad(g,0,1)
-
-\end{verbatim}
-
-results in :math:`1.47894`
+The result is given as :math:`1.47894`.
 
 =========
 Example 2
@@ -208,13 +198,13 @@ and we are interested in the integral along the curve (for the work done by :mat
 
 .. math::
 
-    \int_C \mathbf{F} \cdot d\mathbf{r} = \int_C F \cdot \hat{\mathbf{T}} ds 
+    \int_C \mathbf{F} \cdot d\mathbf{r} = \int_C \mathbf{F} \cdot \hat{\mathbf{T}} ds 
 
     = \int_C P \ dx + Q \ dy + R \ dz 
 
-This last part seems like a magic trick.  We'll see how it's done in the next section.
+This last part probably seems like a magic trick.  We'll see how it's done in the next section.
 
-Here I would like to show how we evaluate it.  The crucial insight is parametrization of the curve.  Suppose
+Here I would like to show how we evaluate it.  The crucial insight is provided by parametrization of the curve.  That gives us a function of a single variable.  Suppose
 
 .. math::
 
@@ -242,8 +232,6 @@ Evaluate from say, :math:`t=0` to :math:`t=1`
 
 It doesn't seem complicated at all, once we have the parametric equations.
 
-\vspace{2 mm}
-
 ====
 Work
 ====
@@ -262,7 +250,9 @@ As before, it makes great sense symbolically, but how to compute it?  To start w
 
     d\mathbf{r} = \hat{\mathbf{T}} \ ds 
 
-where :math:`\hat{\mathbf{T}}` is the unit vector in the direction of :math:`d\mathbf{r}` and :math:`ds` is the magnitude of :math:`d\mathbf{r}`.  Moreover, notice that
+where :math:`\hat{\mathbf{T}}` is the unit vector in the direction of :math:`d\mathbf{r}` and :math:`ds` is the magnitude of :math:`d\mathbf{r}` (that is, the speed).
+
+Moreover, notice that
 
 .. math::
 
@@ -298,7 +288,7 @@ Suppose :math:`C` is the unit square and
 
 .. math::
 
-    \mathbf{F} = \ <x,y> \ 
+    \mathbf{F} = \langle x,y \rangle
 
 For the first leg we have :math:`y=0` and :math:`x=0 \rightarrow 1`.  So parametrize :math:`x` using :math:`t` by setting :math:`x=t` and let :math:`t=0 \rightarrow 1`.  Now
 
@@ -312,7 +302,7 @@ and
 
     dy/dt=0 
 
-and since :math:`\mathbf{F} = \ <x,y>`;  :math:`M = x = t`)
+and since :math:`\mathbf{F} = \ <x,y>`, :math:`M = x = t`.
 
 .. math::
 
@@ -388,7 +378,7 @@ written with the "del" notation
 Another example
 ===============
 
-Suppose :math:`\mathbf{F}` is :math:`\angle y,x \rangle` and we want
+Suppose :math:`\mathbf{F}` is :math:`\langle y,x \rangle` and we want
 
 .. math::
 
@@ -456,7 +446,9 @@ The fundamental theorem of calculus for line integrals:
 
     \int_C \nabla f \cdot d \mathbf{r} =   f(P1) - f(P2) 
 
-The example is a closed curve (P1 = P2), so of course it's just 0.  But we can also do each part separately using the method.  We get :math:`f(x,y) = (1/\sqrt{2} \times 1/\sqrt{2}) = 1/2` along :math:`C_2` (starting from :math:`0` at :math:`C_1`), and of course, minus that along :math:`C_3`, back to :math:`(0,0)`.
+The example is a closed curve (P1 = P2), so of course it's just 0.  
+
+But we can also do each part separately using the method.  We get :math:`f(x,y) = (1/\sqrt{2} \times 1/\sqrt{2}) = 1/2` along :math:`C_2` (starting from :math:`0` at :math:`C_1`), and of course, minus that along :math:`C_3`, back to :math:`(0,0)`.
 
 In the case where :math:`\mathbf{F}` is the gradient (:math:`\nabla`) of a potential function
 
@@ -470,15 +462,12 @@ In the case where :math:`\mathbf{F}` is the gradient (:math:`\nabla`) of a poten
 More
 ====
 
-Here is are two more examples, from the OSU site:
+Here are two more examples, from the OSU site:
 
-\begin{verbatim}
+- www.math.oregonstate.edu/home/programs/undergrad/
 
-www.math.oregonstate.edu/home/programs/undergrad/ +
+- CalculusQuestStudyGuides/vcalc/conserve/conserve.html
 
-CalculusQuestStudyGuides/vcalc/conserve/conserve.html
-
-\end{verbatim}
 
 If :math:`\mathbf{F}` is the gradient of a function, then by FTC for line integrals
 
@@ -490,7 +479,7 @@ For example, suppose :math:`f(x,y) = xy + x` and C is the top half of the unit c
 
 .. math::
 
-    \mathbf{F} = \nabla f = \ < \ f_x, f_y \ > \  = \ < \ y+1,x \ > \ 
+    \mathbf{F} = \nabla f = \langle f_x, f_y \rangle \  = \ \langle y+1,x \rangle 
 
 Parameterize the curve :math:`C` by
 
@@ -498,7 +487,7 @@ Parameterize the curve :math:`C` by
 
     x=\cos t, \ \ y = \sin t 
 
-:math:` t = 0 \rightarrow t = \pi`.
+:math:`t = 0 \rightarrow t = \pi`.
 
 .. math::
 
@@ -526,4 +515,4 @@ We have the terms we need for the partial derivatives to work out.
 
 .. math::
 
-    f = xz + y^2z + const 
+    f = xz + y^2z + \text{constant}

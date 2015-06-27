@@ -4,7 +4,7 @@
 Average value
 #############
 
-We want to consider the idea of the *average value* of a function (over an interval).  One way to think of that would be, by analogy to a list of numbers, to collect the values of :math:`f(x)` at each point along the graph of the function, and then obtain the mean.  Of course, the fact that there are an infinite number of such points is a bit of an issue.
+We want to consider the idea of the *average value* of a function (over an interval).  One way to think of that would be, by analogy to a list of numbers, to collect the values of :math:`f(x)` at each point along the graph of the function, add them up, and then divide by :math:`N` to obtain the mean.  Of course, the fact that there are an infinite number of such points is a bit of an issue.
 
 Let's think of it another way.  Suppose we integrate and find the total area under the curve between :math:`x=a \rightarrow b`.  Take the number calculated from the definite integral, divide by the distance :math:`b-a`, and plot the result as a height :math:`h` so as to form a rectangle above the :math:`x-axis`.
 
@@ -54,6 +54,10 @@ And the outer integral is
 
 The area is :math:`\pi` but zero times :math:`1/\pi` is still zero.  And I suppose it is not a surprise that the average value of :math:`x` over a circle centered at :math:`0` is just :math:`0`.
 
++++++++
+Example
++++++++
+
 The reason I bring this up is a problem in Varberg that has an easy solution and a hard solution.  We've done part of the easy solution here, and the reason I know this is Auroux shows the answer.  Varberg does only the hard calculation, which is a little weird.
 
 .. image:: /figs/Varberg17-12.png
@@ -61,13 +65,43 @@ The reason I bring this up is a problem in Varberg that has an easy solution and
 
 The diagram shows the unit circle at the origin in blue with an inset missing circle in white.  The missing circle has radius :math:`1/2` and is centered at :math:`1/2,0`.  The problem is to find the average value of the function :math:`x` over the blue region.
 
-Now, we've just finished showing that the average value of :math:`x` over the unit circle is zero.  But :math:`\bar{x}` over the small circle will not be zero, and we will obtain minus that value by subtracting from the big circle.
+We've just finished showing that the average value of :math:`x` over the unit circle is zero.  However, :math:`\bar{x}` over the small circle will not be zero, but :math:`1/2`.
+
+We can use an important basic principle to solve this.  If we break a figure up into two (or more) parts, and compute an integral over each part, the parts should add up.
+
+The integral we are computing is:
 
 .. math::
 
-    \bar{x} = \frac{1}{Area} \ \iint_R x \ dA 
+    \iint_R x \ dA
 
-Surely :math:`\bar{x}` over the small circle is :math:`1/2`, multiplied by the area :math:`\pi/4` and negated because of the subtraction, we predict the answer will be :math:`- \pi/8`.
+so
+
+.. math::
+
+    \iint_{R} x \ dA = \iint_{w} x \ dA + \iint_{b} x \ dA
+
+where :math:`b` is the blue region and :math:`w` is the white region.
+
+Rearranging the general formula for average value slightly:
+
+.. math::
+
+    A \bar{x} = \iint_R x \ dA
+    
+where :math:`A` is the area of the region.
+
+So:
+
+.. math::
+
+    A_{R} \bar{x}{}_{R} = A_w \bar{x}{}_w + A_b \bar{x}{}_b
+
+We know that :math:`A \bar{x}` for the white region is :math:`\pi/8`, and that the same thing over the entire region is zero.  So we calculate that 
+
+.. math::
+
+    A_b \bar{x}{}_b = - \frac{\pi}{8}
 
 Let's try to do the problem the way its done in Varberg.
 

@@ -15,7 +15,7 @@ Contents:
    differentiation/index
    integration/index
    integration-apps/index
-   curves/index
+   line-integrals/index
    surfaces/index
 
 

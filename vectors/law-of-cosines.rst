@@ -13,61 +13,39 @@ An altitude has been drawn from the vertex with angle :math:`C` to side :math:`c
 
 The large triangle and the two smaller ones made from it are all similar to each other.  This is easily proven using complementary angles of a right triangle.
 
-We'll use these four facts
+Start with the small triangle on the right
 
 .. math::
 
-    c = d + e
+    a^2 = h^2 + e^2
 
-    a^2 = e^2 + h^2
-
-    b^2 = d^2 + h^2
-
-    d = b \cos A
-
-Start with
+Substitute for :math:`h^2` using the small triangle on the left:
 
 .. math::
-
-    a^2 = e^2 + h^2
-
-Knowing that
-
-.. math::
-
-    b^2 = d^2 + h^2
 
     h^2 = b^2 - d^2
 
-substitute for :math:`h^2`
+    a^2 = b^2 - d^2 + e^2
+
+since :math:`e = c - d` and :math:`e^2 = c^2 - 2cd + d^2`:
 
 .. math::
 
-    a^2 = e^2 + b^2 - d^2
+    a^2 = b^2 - d^2 + c^2 - 2cd + d^2
+    
+    = b^2 + c^2 - 2cd
 
-Since :math:`e = c - d`, substitute for :math:`e^2`
-
-.. math::
-
-    a^2 = (c-d)^2 + b^2 - d^2
-
-    = c^2 -2cd + d^2 + b^2 - d^2
-
-    = b^2 + c^2 -2cd
-
-Finally, substitute for :math:`d` knowing that :math:`d = b \cos A`
+Finally, substitute for :math:`d = b \cos A`
 
 .. math::
 
     a^2 = b^2 + c^2 -2bc \cos A
 
-QED.
-
 This is the Law of Cosines.
 
 Notice that if :math:`A = 90^\circ`, :math:`d=0` and :math:`cos A = 0`, and this becomes the Pythagorean Theorem.
 
-Another way, which is slightly shorter:
+Another way, which uses :math:`\sin A` as well:
 
 .. image:: /figs/triangle.png
    :scale: 50 %
