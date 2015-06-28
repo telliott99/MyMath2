@@ -17,6 +17,7 @@ Contents:
    integration-apps/index
    line-integrals/index
    surfaces/index
+   maxwell/index
 
 
 Indices and tables
