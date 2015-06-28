@@ -9,6 +9,7 @@ Contents:
    
    vector-intro
    dot-product
+   dot-product2
    law-of-cosines
    cross-product
    cross-product2
