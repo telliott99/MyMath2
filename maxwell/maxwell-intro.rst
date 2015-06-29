@@ -7,7 +7,7 @@ Maxwell:  introduction
 This section is a brief introduction to Maxwell's Equations.  I want to show both the "differential" and "integral" forms, and to do that we need to start with a review of the Divergence Theorem and Stokes' Theorem.  It's easiest to understand those by looking first at the 2D case using Green's Theorem.
 
 ================
-Green and stokes
+Green and Stokes
 ================
 
 Green's Theorem applies to curves and fields that "live in the plane."  It comes in two versions.  The first one says that the work done going around a closed curve :math:`C` embedded in a vector field :math:`\mathbf{F}` is equal to the "curl" of the same field over the region enclosed by the curve.  (The curl is only defined in 3D, but here its single component is in the :math:`z`-direction since the vector field has no :math:`z`-component).
@@ -34,7 +34,7 @@ For this simple example in the plane, the curl of :math:`\mathbf{F}` has its onl
 
 This is a real double integral.
 
-For a conservative force, the force is the gradient of some scalar function called the potential (:math:`\mathbf{F} = \nabla \phi = \ \langle \phi_x, \phi_y \rangle`), so the curl (:math:`\nabla \times \mathbf{F} = N_x - M_y = \phi_{yx} - \phi_{xy}`) is zero, since the mixed second derivatives of a function :math:`\phi(x,y)` must be equal.
+For a conservative force, the force is the gradient of some scalar function called the potential (:math:`\mathbf{F} = \nabla \phi = \ \langle \phi_x, \phi_y \rangle`), so the curl (:math:`\nabla \times \mathbf{F} = N_x - M_y = \phi_{yx} - \phi_{xy}`) is zero, since the mixed second derivatives of a function :math:`\phi(x,y)` are be equal.
 
 In three dimensions, this becomes Stokes' Theorem:
 
@@ -42,7 +42,11 @@ In three dimensions, this becomes Stokes' Theorem:
 
     \oint_C \mathbf{F} \cdot d \mathbf{r} = \iint_S ( \nabla \times \mathbf{F}) \cdot \hat{\mathbf{n}} \ dS 
 
-Stokes theorem applies to a curve in space, which does not have to lie in a plane.  The theorem says that the work going around the curve is equal to the integral of the component of the curl of :math:`\mathbf{F}` normal to the surface, over \emph{any surface} with that curve as its boundary.
+Stokes theorem applies to a curve in space, which does not have to lie in a plane.  The theorem says that the work going around the curve is equal to the integral of the component of the curl of :math:`\mathbf{F}` normal to the surface, over *any surface* with that curve as its boundary.
+
+Here is a sketch from wikipedia:
+
+.. image:: /figs/stokes.png
 
 ====================
 Green and divergence
@@ -56,11 +60,18 @@ Green's Theorem for flux in the plane is
 
 Here, we imagine that :math:`\mathbf{F}` could be a velocity field of some kind, like that describing the flow of a fluid.  What the theorem says is that if there is net flow across the boundary, there has to be a source or a sink inside, depending on the sign of the flow.
 
-As before, the left-hand integral needs to be cast in terms of a single variable through parameterization of the curve.  The right-hand side is (for :math:`\mathbf{F} = \ \langle M, N \rangle`)
+As before, the left-hand integral needs to be cast in terms of a single variable through parametrization of the curve.  The right-hand side is, for :math:`\mathbf{F} = \ \langle M, N \rangle`:
 
 .. math::
 
-    \iint_R \nabla \cdot \mathbf{F} \ dA = \iint (M_x + N_y) \ dx \ dy   
+    \iint_R \nabla \cdot \mathbf{F} \ dA = \iint (M_x + N_y) \ dx \ dy
+    
+Hence
+
+.. math::
+
+    \oint_C \mathbf{F} \cdot \mathbf{n} \ ds = \iint (M_x + N_y) \ dx \ dy
+
 
 In three dimensions, the divergence theorem is
 
@@ -68,7 +79,7 @@ In three dimensions, the divergence theorem is
 
     \iint_S \mathbf{F} \cdot \mathbf{n} \ dS = \iiint_V \nabla \cdot \mathbf{F} \ dV = \iiint_V (P_x + Q_y + R_z) \ dx \ dy \ dz 
 
-(for :math:`\mathbf{F} = \ \langle P,Q,R \rangle`).
+for :math:`\mathbf{F} = \ \langle P,Q,R \rangle`.
 
 ===========
 Gauss's law
@@ -80,7 +91,13 @@ The first of Maxwell's Equations is Gauss's Law, which says that for any surface
 
     \Phi_E = \frac{Q}{\epsilon_0} = \iint_S \mathbf{E} \cdot d\mathbf{A} 
 
-So, if we knew the field (magnitude and direction) at every point on the surface, then we could calculate the charge.  However, the usual situation is that we know the charge, and for a limited number of special cases we argue from symmetry that the field is everywhere perpendicular to the surface.  For example, consider a charged sphere and a Gaussian surface surrounding that sphere at a radius of :math:`R` from the center of the sphere.  By symmetry, the field is radial.  We write
+So, if we knew the field (magnitude and direction) at every point on the surface, then we could calculate the charge.  However, the usual situation is that we know the charge, and for a limited number of special cases we argue from symmetry that the field is everywhere perpendicular to the surface.  
+
+For example, consider a charged sphere and a Gaussian surface surrounding that sphere at a radius of :math:`r` from the center of the sphere.  By symmetry, the field is radial.  
+
+.. image:: /figs/charged-sphere.png
+
+We write
 
 .. math::
 
@@ -92,15 +109,19 @@ We can do the last step because of the radial field.  Then
 
 .. math::
 
-    = E \iint_S \ dA = E \ 4 \pi R^2 
+    = E \iint_S \ dA = E \ 4 \pi r^2 
 
 Therefore,
 
 .. math::
 
-    E = \frac{1}{4 \pi \epsilon_0} \ \frac{Q}{R^2} 
+    E = \frac{1}{4 \pi \epsilon_0} \ \frac{Q}{r^2} 
 
 which is easily transformed to Coulomb's Law when we multiply by the value of a test charge.
+
+==================
+Differential forms
+==================
 
 All of Maxwell's equations have both an integral form like
 
@@ -185,30 +206,6 @@ but if the integrals are equal, then so are the integrands.  Thus
 
     \mu_0 \ \mathbf{j}   = \nabla \times \mathbf{B} 
 
-Now, we're not supposed to know this yet, but later on we will find out that
-
-.. math::
-
-    \frac{1}{c^2}= \epsilon_0 \ \mu_0 
-
-So we can rewrite the previous result as
-
-.. math::
-
-    \nabla \times \mathbf{B} = \frac{1}{c^2 \ \epsilon_0} \ \mathbf{j}  
-
-or ???????????????
-
-.. math::
-
-    \frac{1}{c^2} \ \nabla \times \mathbf{B} = \frac{\mathbf{j} }{\epsilon_0} 
-
-This equation acquires another term due to Maxwell and the "displacement current"
-
-.. math::
-
-    \frac{1}{c^2} \ \nabla \times \mathbf{B} = \frac{\mathbf{j} }{\epsilon_0} + \frac{\partial \mathbf{E}}{\partial t}  
-
 ====================
 Displacement current
 ====================
@@ -272,7 +269,7 @@ If a current is flowing there must be an EMF (:math:`\mathcal{E}`).  The force i
 
 As the drawing indicates, the force points perpendicular to the wire.  This means that the forces on the top and bottom cancel.  It is the unbalanced force on the left-hand side of the loop that makes the current flow.  Work is applied to move the loop, this energy input appears as heat in the wire.
 
-One way to figure out which way the current will flow is to remember that the induced current will itself cause a magnetic field.  This field will be such as to \emph{counteract the existing field} :math:`\mathbf{B}`.  In this loop, the current will flow clockwise, as indicated by the little arrows.  The field due to the loop points out of the page.
+One way to figure out which way the current will flow is to remember that the induced current will itself cause a magnetic field.  This field will be such as to *counteract the existing field* :math:`\mathbf{B}`.  In this loop, the current will flow clockwise, as indicated by the little arrows.  The field due to the loop points out of the page.
 
 .. math::
 
