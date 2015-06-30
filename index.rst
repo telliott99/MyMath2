@@ -17,6 +17,8 @@ Contents:
    integration-apps/index
    line-integrals/index
    surfaces/index
+   flux-curl-plane/index
+   flux-curl-space/index
    maxwell/index
 
 

@@ -1,0 +1,243 @@
+.. _Auroux23:
+
+################
+Auroux 23:  Flux
+################
+
+To review, we compute work as
+
+.. math::
+
+    W = \int_C \mathbf{F} \cdot d\mathbf{r} 
+
+As a shorthand we say that
+
+.. math::
+
+    {W = \int_C M dx + N dy} 
+
+We get from one to the other by deconstructing :math:`d\mathbf{r}`
+
+.. math::
+
+    d\mathbf{r} = \hat{\mathbf{T}} \ ds = \frac{d\mathbf{r}}{dt} \ dt 
+
+where
+
+.. math::
+
+    \frac{d\mathbf{r}}{dt} = \ \langle \frac{dx}{dt},\frac{dy}{dt} \rangle 
+
+Hence, if we have :math:`\mathbf{F} = <M,N>` then
+
+.. math::
+
+    W = \int_C \mathbf{F} \cdot \frac{d\mathbf{r}}{dt} \ dt 
+    
+    = \int_C \langle M,N \rangle \cdot \langle \frac{dx}{dt},\frac{dy}{dt} \rangle \ dt 
+    
+    = \int_C M dx + N dy 
+
+=======
+Example
+=======
+
+If
+
+.. math::
+
+    \mathbf{F} = <-y,x> 
+
+    x = t, \ \ y = t^2 
+
+we obtain
+
+.. math::
+
+    W = \int_C \langle M,N \rangle \cdot \langle \frac{dx}{dt},\frac{dy}{dt} \rangle \ dt 
+
+    = \int_C \langle -t^2,t \rangle \cdot \langle 1,2t \rangle \ dt 
+
+    = \int_C t^2 = \frac{1}{3}t^3 \ \bigg |_{P1}^{P2}  
+
+====
+Flux
+====
+
+In this write-up, we're concerned with flux, which also has a shorthand
+
+.. math::
+
+    \text{Flux} = \int_C -N dx + M dy 
+
+We switched :math:`M` for :math:`N` and changed signs.
+
+Work is done by the component of the force in the direction of :math:`\hat{\mathbf{T}}`.  It's the "tail wind", if you will.  
+
+Flux is the "cross-wind", it is the component perpendicular ():math:`\perp \hat{\mathbf{T}}`).
+
+.. math::
+
+    \text{Flux} = \int_C \mathbf{F} \cdot \hat{\mathbf{n}} \ ds 
+
+We'll show a derivation below.
+
+=======
+Example
+=======
+
+Sometimes we don't need to calculate!  Suppose
+
+.. math::
+
+    \mathbf{F} = \ \langle x,y \rangle
+
+a radial field.  Let :math:`C` be a circle of radius :math:`a` centered at the origin.  In this situation the formula with :math:`\hat{\mathbf{n}}` is useful.
+
+.. math::
+
+    \mathbf{F}  \cdot \hat{\mathbf{n}} = |F| |n| cos \theta 
+    
+    = |F| 
+    
+    = \sqrt{x^2 + y^2} = a 
+
+So
+
+.. math::
+
+    \text{Flux} = \int_C \mathbf{F} \cdot \hat{\mathbf{n}} \ ds 
+
+    = \int_C a \ ds = a \int_C \ ds 
+
+    = a \ 2\pi a 
+
+    = 2\pi a^2 
+
+Note that :math:`\hat{\mathbf{n}}` is just :math:`\hat{\mathbf{T}}` rotated by :math:`90^\circ` cw.  (The convention is that the integral should be positive if we move along the curve with the region on our left).  
+
+Now
+
+.. math::
+
+    d \mathbf{r} = \langle dx,dy \rangle 
+
+    = \hat{\mathbf{T}} \ ds 
+
+so
+
+.. math::
+
+    \hat{\mathbf{n}} \ ds = <dy, -dx> 
+
+and
+
+.. math::
+
+    \int_C \mathbf{F} \cdot \hat{\mathbf{n}} \ ds 
+
+    = \int_C \langle M,N \rangle \cdot \langle \frac{dy}{dt},-\frac{dx}{dt} \rangle \ dt 
+
+which we can try to remember as
+
+.. math::
+
+    = \int_C -N dx + M dy 
+
+as shown above.
+
+===============
+Green's theorem
+===============
+
+Our statement of the theorem was that
+
+.. math::
+
+    \int_C M dx + N dy = \int \int_R (N_x - M_y) \ dA
+
+We can use the "del" notation to make this shorter
+
+.. math::
+
+    \int_C M dx + N dy = \int \int_R (N_x - M_y) \ dA 
+
+    = \int \int_R \nabla \times \mathbf{F} \ dA
+
+I will come back to that cross-product in a minute.  But :math:`N_x - M_y` is the curl of :math:`\mathbf{F}`.
+
+Now we just switch letters!  Put :math:`-N` for :math:`M` and :math:`M` for :math:`N`
+
+.. math::
+
+    \int_C -N dx + M dy = \int \int_R (M_x + N_y) \ dA 
+    
+    =  \int \int_R \nabla \cdot \mathbf{F} \ dA
+
+This is Green's Theorem for Flux.  The left-hand side is the Flux, the right-hand side is a way to calculate the same quantity using :math:`\nabla \cdot \mathbf{F}`
+
+=======
+Example
+=======
+
+Suppose :math:`\mathbf{F}= \ <x,y>` and the curve is a circle of radius :math:`a`, but centered at :math:`(0,2)`.  So now parametrization gets a little trickier..
+
+But notice that
+
+.. math::
+
+    \nabla \cdot \mathbf{F} = 2 
+
+So we can calculate the Flux by using Green's Thm (for Flux).  It is just
+
+.. math::
+
+    \int \int_R \nabla \cdot \mathbf{F} \ dA = 2 \int \int_R dA = 2\pi a^2 
+
+and this is true regardless of where the circle is.
+
+========
+Notation
+========
+
+So we have the symbol :math:`\nabla` which we use as an operator
+
+.. math::
+
+    \nabla = \frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z} 
+
+We have already used this in defining the \emph{gradient} of :math:`f`
+
+.. math::
+
+    \nabla f = \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y}, \frac{\partial f}{\partial z} =  \langle f_x, f_y, f_z \rangle 
+
+Now we introduce a dot product and cross product employing :math:`\nabla`.  The first is the divergence of :math:`\mathbf{F}`
+
+.. math::
+
+    \mathbf{F} = \ <P,Q,R> 
+
+    \nabla \cdot \mathbf{F} = P_x + Q_y + R_z 
+
+And the second is the curl of :math:`\mathbf{F}`
+
+.. math::
+
+    \nabla \times \mathbf{F} 
+    =
+    \begin{vmatrix}
+    \hat{i}  &  \hat{j} & \hat{k} \\
+    \frac{\partial}{\partial x}  &  \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+    P  &  Q & R \\
+    \end{vmatrix}
+
+This determinant has three components
+
+.. math::
+
+    | (\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}) - (\frac{\partial R}{\partial x} - \frac{\partial P}{\partial z}) +
+
+    (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) |
+
+What we have in Green's Theorem (with different letters, substitute N for Q and M for P), is a vector with only :math:`x` and :math:`y` components and hence only one of the terms.
