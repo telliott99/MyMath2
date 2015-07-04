@@ -14,13 +14,21 @@ As a shorthand we say that
 
 .. math::
 
-    {W = \int_C M dx + N dy} 
+    {W = \int_C M \ dx + N \ dy} 
 
-We get from one to the other by deconstructing :math:`d\mathbf{r}`
+We can get from one to the other by saying that :math:`\mathbf{F} = \langle M,N \rangle` and :math:`d \mathbf{r} = \langle dx, dy \rangle`, or by deconstructing :math:`d\mathbf{r}` (useful when we start with a parametrized curve):
 
 .. math::
 
-    d\mathbf{r} = \hat{\mathbf{T}} \ ds = \frac{d\mathbf{r}}{dt} \ dt 
+    d\mathbf{r} = \frac{d\mathbf{r}}{dt} \ dt = \mathbf{v} \ dt 
+    
+    = \langle \frac{dx}{dt}, \frac{dx}{dt} \rangle \ dt
+    
+    = \langle dx, dy \rangle
+    
+    = \hat{\mathbf{T}} \ \frac{ds}{dt} \ dt
+
+These are all equivalent.  For example in the first one we have velocity times time, and in the last one we have speed, in the direction of the unit vector tangent to the curve, i.e. where we are pointing.  That's the same thing as velocity, times the time.
 
 where
 
@@ -28,7 +36,7 @@ where
 
     \frac{d\mathbf{r}}{dt} = \ \langle \frac{dx}{dt},\frac{dy}{dt} \rangle 
 
-Hence, if we have :math:`\mathbf{F} = <M,N>` then
+Hence, if we have :math:`\mathbf{F} =  \langle M,N \rangle` then
 
 .. math::
 
@@ -36,7 +44,7 @@ Hence, if we have :math:`\mathbf{F} = <M,N>` then
     
     = \int_C \langle M,N \rangle \cdot \langle \frac{dx}{dt},\frac{dy}{dt} \rangle \ dt 
     
-    = \int_C M dx + N dy 
+    = \int_C M \ dx + N \ dy
 
 =======
 Example
@@ -46,7 +54,7 @@ If
 
 .. math::
 
-    \mathbf{F} = <-y,x> 
+    \mathbf{F} =  \langle -y,x \rangle 
 
     x = t, \ \ y = t^2 
 
@@ -70,11 +78,13 @@ In this write-up, we're concerned with flux, which also has a shorthand
 
     \text{Flux} = \int_C -N dx + M dy 
 
-We switched :math:`M` for :math:`N` and changed signs.
+We switched :math:`M` for :math:`N` and changed signs on the term with :math:`dx`.
+
+(When we get to :math:`\mathbb{R^3}` we will see another notation for flux and for curl).
 
 Work is done by the component of the force in the direction of :math:`\hat{\mathbf{T}}`.  It's the "tail wind", if you will.  
 
-Flux is the "cross-wind", it is the component perpendicular ():math:`\perp \hat{\mathbf{T}}`).
+Flux is the "cross-wind", it is the perpendicular component in the direction normal to the curve (:math:`\hat{\mathbf{n}}\perp \hat{\mathbf{T}}`).
 
 .. math::
 
@@ -92,7 +102,9 @@ Sometimes we don't need to calculate!  Suppose
 
     \mathbf{F} = \ \langle x,y \rangle
 
-a radial field.  Let :math:`C` be a circle of radius :math:`a` centered at the origin.  In this situation the formula with :math:`\hat{\mathbf{n}}` is useful.
+This is a *radial* field.  
+
+Let :math:`C` be a circle of radius :math:`a` centered at the origin.  In this situation the formula with :math:`\hat{\mathbf{n}}` is useful.
 
 .. math::
 
@@ -128,7 +140,15 @@ so
 
 .. math::
 
-    \hat{\mathbf{n}} \ ds = <dy, -dx> 
+    \hat{\mathbf{n}} \ ds =  \langle dy, -dx \rangle
+
+We test for orthogonality in the usual way: 
+
+.. math::
+    
+    \hat{\mathbf{T}} \ ds \cdot \hat{\mathbf{n}} \ ds
+    
+    = \langle dx , dy \rangle \cdot \langle dy, -dx \rangle = 0
 
 and
 
@@ -146,6 +166,8 @@ which we can try to remember as
 
 as shown above.
 
+Reversing the sign of the :math:`x` component corresponds to counter-clockwise rotation, which is our convention.  :math:`\hat{\mathbf{T}}` rotated counter-clockwise 90 degrees is :math:`\hat{\mathbf{n}}`, which is the normal component coming out of a "simply connected region" as we go around the curve in the counter-clockwise direction.
+
 ===============
 Green's theorem
 ===============
@@ -154,13 +176,13 @@ Our statement of the theorem was that
 
 .. math::
 
-    \int_C M dx + N dy = \int \int_R (N_x - M_y) \ dA
+    \int_C M \ dx + N \ dy = \int \int_R (N_x - M_y) \ dA
 
 We can use the "del" notation to make this shorter
 
 .. math::
 
-    \int_C M dx + N dy = \int \int_R (N_x - M_y) \ dA 
+    \int_C M \ dx + N \ dy = \int \int_R (N_x - M_y) \ dA 
 
     = \int \int_R \nabla \times \mathbf{F} \ dA
 
@@ -170,7 +192,7 @@ Now we just switch letters!  Put :math:`-N` for :math:`M` and :math:`M` for :mat
 
 .. math::
 
-    \int_C -N dx + M dy = \int \int_R (M_x + N_y) \ dA 
+    \int_C -N \ dx + M \ dy = \int \int_R (M_x + N_y) \ dA 
     
     =  \int \int_R \nabla \cdot \mathbf{F} \ dA
 
@@ -180,7 +202,7 @@ This is Green's Theorem for Flux.  The left-hand side is the Flux, the right-han
 Example
 =======
 
-Suppose :math:`\mathbf{F}= \ <x,y>` and the curve is a circle of radius :math:`a`, but centered at :math:`(0,2)`.  So now parametrization gets a little trickier..
+Suppose :math:`\mathbf{F}= \  \langle x,y \rangle` and the curve is a circle of radius :math:`a`, but centered at :math:`(0,2)`.  So now parametrization gets a little trickier..
 
 But notice that
 
@@ -216,7 +238,7 @@ Now we introduce a dot product and cross product employing :math:`\nabla`.  The 
 
 .. math::
 
-    \mathbf{F} = \ <P,Q,R> 
+    \mathbf{F} = \  \langle P,Q,R \rangle 
 
     \nabla \cdot \mathbf{F} = P_x + Q_y + R_z 
 

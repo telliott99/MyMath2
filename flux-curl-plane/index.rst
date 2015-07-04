@@ -1,6 +1,6 @@
-#####################
-Flux and Curl---Plane
-#####################
+##########################
+Flux and curl in the plane
+##########################
 
 Contents:
 
@@ -9,6 +9,6 @@ Contents:
    
    Auroux22
    Auroux23
-   2D-divergence-example
+   2D-curl-example
    Green-example
    plane-summary

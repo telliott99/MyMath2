@@ -4,13 +4,13 @@
 More parametrization
 ####################
 
-When we parametrized curves, we were able to work with curves which expressed :math:`x`,:math:`y` and :math:`z` as functions of a single parameter, which we usually call :math:`t`.  For surfaces, we will usually have two variables :math:`u` and :math:`v`.  For example, on the globe we locate our position by longitude and latitude.
+When we parametrized curves, we were able to work with curves which expressed :math:`x`,:math:`y` and :math:`z` as functions of a \single parameter, which we usually call :math:`t`.  For surfaces, we will usually have two variables :math:`u` and :math:`v`.  For example, on the globe we locate our position by longitude and latitude.
 
 As an example, consider
 
 .. math::
 
-    \mathbf{r}(u,v) = u \hat{i} + u \ cos \ v \hat{j} + u \ sin \ v \hat{k} 
+    \mathbf{r}(u,v) = u \hat{i} + u \ \cos \ v \hat{j} + u \ \sin \ v \hat{k} 
 
 We have three parametric equations, one for each variable
 
@@ -18,9 +18,9 @@ We have three parametric equations, one for each variable
 
     x = u 
 
-    y = u \ cos \ v 
+    y = u \ \cos \ v 
 
-    z = u \ sin \ v 
+    z = u \ \sin \ v 
 
 So what this looks like is that we'll have a circle parallel to the yz-plane with radius :math:`u`, where :math:`u = x`.  We notice that if we square all the terms
 
@@ -28,7 +28,7 @@ So what this looks like is that we'll have a circle parallel to the yz-plane wit
 
     x^2 = u^2 
 
-    y^2 + z^2 = u^2 \cos^2 \ v + u^2 \sin^2 \ v = u^2 = x^2 
+    y^2 + z^2 = u^2 \\cos^2 \ v + u^2 \\sin^2 \ v = u^2 = x^2 
 
 Going from the equations back to the surface is fairly unusual.  Typically we do things the other way around.
 
@@ -67,23 +67,23 @@ This is just a sphere of radius :math:`4`.  The parametric representation uses t
 
 .. math::
 
-    x = \rho \ sin \phi \ cos \theta 
+    x = \rho \ \sin \phi \ \cos \theta 
 
-    y = \rho \ sin \phi \ sin \theta 
+    y = \rho \ \sin \phi \ \sin \theta 
 
-    z = \rho \ cos \phi 
+    z = \rho \ \cos \phi 
 
 where :math:`\phi` is the angle with respect to the positive z-axis.  So in the xy-plane
 
 .. math::
 
-    \phi=\pi/2, \ \ cos \phi = 0, \ \ z = 0, \ \ x = \rho \ cos \theta, \ \ y = \rho \ sin \theta 
+    \phi=\pi/2, \ \ \cos \phi = 0, \ \ z = 0, \ \ x = \rho \ \cos \theta, \ \ y = \rho \ \sin \theta 
 
 and we just have a circle of radius :math:`\rho`.  In fact, for any :math:`z < \rho`, the angle :math:`\phi` is determined, which then makes the radius of the circle traced out by :math:`x` and :math:`y` smaller.
 
 .. math::
 
-    \mathbf{r}(\theta,\phi) = \rho \ sin \phi \ cos \theta \ \hat{i} + \rho \ sin \phi \ sin \theta  \ \hat{j} + \rho \ cos \phi \ \hat{k} 
+    \mathbf{r}(\theta,\phi) = \rho \ \sin \phi \ \cos \theta \ \hat{i} + \rho \ \sin \phi \ \sin \theta  \ \hat{j} + \rho \ \cos \phi \ \hat{k} 
 
     0 \le \phi \le \pi, \ \ 0 \le \theta \le 2 \pi 
 
@@ -99,9 +99,9 @@ Now we have no restrictions on :math:`z`.
 
 .. math::
 
-    x = rcos \theta, \ \ y = rsin \theta, \ \ z = z 
+    x = r\cos \theta, \ \ y = r\sin \theta, \ \ z = z 
 
-    \mathbf{r}(\theta,\phi) = rcos \theta \ \hat{i} + rsin \theta \ \hat{j} + z \hat{k} 
+    \mathbf{r}(\theta,\phi) = r\cos \theta \ \hat{i} + r\sin \theta \ \hat{j} + z \hat{k} 
 
     0 \le \theta \le 2 \pi 
 
@@ -141,7 +141,7 @@ Suppose we have
 
     \mathbf{r}(u,v) = u \ \hat{i} + 2v^2 \ \hat{j} + (u^2 + v) \ \hat{k} 
 
-and we're looking at the point :math:`(2,2,3)`.  We find the two tangent vectors using the equation above
+and we're looking at the point :math:`(2,2,3)`.  We find the two tangent vectors u\sing the equation above
 
 .. math::
 
@@ -221,11 +221,11 @@ If we parametrize this as before
 
 .. math::
 
-    x = \rho \ sin \phi \ cos \theta = a \ sin \phi \ cos \theta 
+    x = \rho \ \sin \phi \ \cos \theta = a \ \sin \phi \ \cos \theta 
 
-    y = \rho \ sin \phi \ sin \theta = a \ sin \phi \ sin \theta
+    y = \rho \ \sin \phi \ \sin \theta = a \ \sin \phi \ \sin \theta
 
-    z = \rho \ cos \phi = a \ cos \phi 
+    z = \rho \ \cos \phi = a \ \cos \phi 
 
 We can either remember that the normal vector at any point on this sphere is
 
@@ -237,11 +237,11 @@ or we can write
 
 .. math::
 
-    \mathbf{r}(\theta,\phi) = a \ sin \phi \ cos \theta \ \hat{i} + a \ sin \phi \ sin \theta \ \hat{j} + a \ cos \phi \ \hat{k} 
+    \mathbf{r}(\theta,\phi) = a \ \sin \phi \ \cos \theta \ \hat{i} + a \ \sin \phi \ \sin \theta \ \hat{j} + a \ \cos \phi \ \hat{k} 
 
-    \mathbf{r_{\theta}} = - a\ sin \phi \ sin \theta \ \hat{i} + a \ sin \phi \ cos \theta \  \hat{j} + 0 \ \hat{k} 
+    \mathbf{r_{\theta}} = - a\ \sin \phi \ \sin \theta \ \hat{i} + a \ \sin \phi \ \cos \theta \  \hat{j} + 0 \ \hat{k} 
 
-    \mathbf{r_{\phi}} = a\ cos \phi \ cos \theta \ \hat{i} + a \ cos \phi \ sin \theta \  \hat{j} - a \ sin \phi \ \hat{k} 
+    \mathbf{r_{\phi}} = a\ \cos \phi \ \cos \theta \ \hat{i} + a \ \cos \phi \ \sin \theta \  \hat{j} - a \ \sin \phi \ \hat{k} 
 
 And
 
@@ -251,33 +251,33 @@ And
 
     \begin{bmatrix}
     \hat{i} & \hat{j} & \hat{k} \\
-    -sin \phi \ sin \theta & sin \phi \ cos \theta & 0 \\
-    \ \ cos \phi \ cos \theta & cos \phi \ sin \theta & -sin \ \phi
+    -\sin \phi \ \sin \theta & \sin \phi \ \cos \theta & 0 \\
+    \ \ \cos \phi \ \cos \theta & \cos \phi \ \sin \theta & -\sin \ \phi
     \end{bmatrix}
 
 the components are (all multiplied by :math:`a^2`) and then we have
 
 .. math::
 
-    -sin^2\phi \ cos \ \theta \  \hat{i} 
+    -\sin^2\phi \ \cos \ \theta \  \hat{i} 
 
-    -sin^2\phi \ sin \ \theta \  \hat{j} 
+    -\sin^2\phi \ \sin \ \theta \  \hat{j} 
 
-    -sin\phi \ cos\phi \ sin^2\theta - sin\phi \ cos\phi \ cos^2\theta \  \hat{k} = -sin \phi \ cos \phi \  \hat{k} 
+    -\sin\phi \ \cos\phi \ \sin^2\theta - \sin\phi \ \cos\phi \ \cos^2\theta \  \hat{k} = -\sin \phi \ \cos \phi \  \hat{k} 
 
-    \mathbf{N} = a^2 \ sin \phi \ <-sin \phi \ cos \theta, -sin \phi \ sin \theta, -cos \phi > 
+    \mathbf{N} = a^2 \ \sin \phi \ <-\sin \phi \ \cos \theta, -\sin \phi \ \sin \theta, -\cos \phi > 
 
-    \Vert \mathbf{N} \Vert = a^2 \ sin \phi \ \sqrt{sin^2\phi \ cos^2\theta + sin^2\phi \ sin^2\theta + cos^2\phi } 
+    \Vert \mathbf{N} \Vert = a^2 \ \sin \phi \ \sqrt{\sin^2\phi \ \cos^2\theta + \sin^2\phi \ \sin^2\theta + \cos^2\phi } 
 
-    \Vert \mathbf{N} \Vert = a^2 \ sin \phi \ \sqrt{sin^2\phi  + cos^2\phi } = a^2 \ sin \phi
+    \Vert \mathbf{N} \Vert = a^2 \ \sin \phi \ \sqrt{\sin^2\phi  + \cos^2\phi } = a^2 \ \sin \phi
 
-    \mathbf{n} = \mathbf{N} / \Vert \mathbf{N} \Vert = \ <-sin \phi \ cos \theta, -sin \phi \ sin \theta, -cos \phi > 
+    \mathbf{n} = \mathbf{N} / \Vert \mathbf{N} \Vert = \ <-\sin \phi \ \cos \theta, -\sin \phi \ \sin \theta, -\cos \phi > 
 
 This is the unit normal at the point
 
 .. math::
 
-    (a \ sin \phi \ cos \theta, a \ sin \phi \ sin \theta, a \ cos \phi ) = (x,y,z) 
+    (a \ \sin \phi \ \cos \theta, a \ \sin \phi \ \sin \theta, a \ \cos \phi ) = (x,y,z) 
 
 The sign of the normal vector is negative.  By convention :math:`\mathbf{n}` points into the sphere.
 
@@ -285,31 +285,31 @@ How do we integrate this to get the surface area?  Aren't we mixing up :math:`x,
 
 .. math::
 
-    A = \int \int_D \ \Vert \mathbf{r_{\theta}} \times \mathbf{r_{\phi}} \Vert \ dA = \int \int_D \ \Vert \mathbf{N} \Vert \ dA = \int \int_D \ a^2 \ sin \phi \ dA 
+    A = \int \int_D \ \Vert \mathbf{r_{\theta}} \times \mathbf{r_{\phi}} \Vert \ dA = \int \int_D \ \Vert \mathbf{N} \Vert \ dA = \int \int_D \ a^2 \ \sin \phi \ dA 
 
-:math:`dA = \ d\theta \ d\phi`.  It is not really the area element, because we need to correct by using the Jacobian, which is what we really just computed above..
+:math:`dA = \ d\theta \ d\phi`.  It is not really the area element, because we need to correct by u\sing the Jacobian, which is what we really just computed above..
 
-The area element is actually :math:`a^2 \ sin \phi \ d\theta \ d\phi`.
+The area element is actually :math:`a^2 \ \sin \phi \ d\theta \ d\phi`.
 
 .. math::
 
-    A = \int \int_D \ a^2 \ sin \phi \ d\theta \ d\phi 
+    A = \int \int_D \ a^2 \ \sin \phi \ d\theta \ d\phi 
 
     0 \le \phi \le \pi, \ \ 0 \le \theta \le 2 \pi 
 
-    A = \int_0^{\pi} \int_0^{2\pi} \ a^2 \ sin \phi \ d\theta \ d\phi 
+    A = \int_0^{\pi} \int_0^{2\pi} \ a^2 \ \sin \phi \ d\theta \ d\phi 
 
 The inner integral is
 
 .. math::
 
-    \int_0^{2\pi} \ a^2 \ sin \phi \ d\theta = 2 \pi a^2 \ sin \phi 
+    \int_0^{2\pi} \ a^2 \ \sin \phi \ d\theta = 2 \pi a^2 \ \sin \phi 
 
 and the outer integral is then
 
 .. math::
 
-    \int_0^{\pi} 2 \pi a^2 \ sin \phi \  d \phi = 2\pi a^2 (-1)(cos \phi) \bigg |_0^{\pi} =  2\pi a^2 (-1)(-2) = 4\pi a^2 
+    \int_0^{\pi} 2 \pi a^2 \ \sin \phi \  d \phi = 2\pi a^2 (-1)(\cos \phi) \bigg |_0^{\pi} =  2\pi a^2 (-1)(-2) = 4\pi a^2 
 
 which is correct.
 
@@ -350,7 +350,7 @@ This shape is called a "spherical cap."  The problem should be pretty easy becau
 
 .. math::
 
-    A = \int \int_D \ a^2 \ sin \phi \ d\theta \ d\phi 
+    A = \int \int_D \ a^2 \ \sin \phi \ d\theta \ d\phi 
 
 The trick is to find out where the cylinder and the sphere intersect.  We have
 
@@ -362,13 +362,13 @@ The trick is to find out where the cylinder and the sphere intersect.  We have
 
 These are both true when :math:`z^2 = 4, z = \pm \ 2`.
 
-What we need to do is to find the angle :math:`\phi` that this corresponds to.  Since we know that
+What we need to do is to find the angle :math:`\phi` that this corresponds to.  \since we know that
 
 .. math::
 
-    z = a \ cos \phi, \ \ a = 4, \ \ z=2 
+    z = a \ \cos \phi, \ \ a = 4, \ \ z=2 
 
-    cos \phi = \frac{1}{2}, \ \ \phi = \frac{\pi}{3} 
+    \cos \phi = \frac{1}{2}, \ \ \phi = \frac{\pi}{3} 
 
 So we have that the range of :math:`\phi` is
 
@@ -380,18 +380,18 @@ Remember that :math:`\phi = 0` at the top of the sphere, and that's the part we 
 
 .. math::
 
-    A =  \int_0^{\pi/3} \int_0^{2\pi} \ a^2 \ sin \phi \ d\theta \ d\phi 
-
+    A =  \int_0^{\pi/3} \int_0^{2\pi} \ a^2 \ \sin \phi \ d\theta \ d\phi 
+    
 The inner integral is
 
 .. math::
 
-    \int_0^{2\pi} \ a^2 \ sin \phi \ d\theta = 2\pi a^2 \ sin \phi 
+    \int_0^{2\pi} \ a^2 \ \sin \phi \ d\theta = 2\pi a^2 \ \sin \phi 
 
 and the outer is
 
 .. math::
 
-    \int_0^{\pi/3} 2\pi a^2 \ sin \phi   \ d\phi 
+    \int_0^{\pi/3} 2\pi a^2 \ \sin \phi   \ d\phi 
 
-    2\pi a^2 \ (-cos \phi) \ \bigg |_0^{\pi/3} = 2\pi a^2 (-\frac{1}{2} + 1) = \pi a^2 = 16 \pi 
+    2\pi a^2 \ (-\cos \phi) \ \bigg |_0^{\pi/3} = 2\pi a^2 (-\frac{1}{2} + 1) = \pi a^2 = 16 \pi 

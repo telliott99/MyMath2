@@ -1,8 +1,8 @@
 .. _easy surface:
 
-############
-Easy surface
-############
+#######################
+Basic Surface Integrals
+#######################
 
 Let's see if we can figure out the basic facts about surface integrals as simply as we can.  We would like to work in :math:`x,y,z` coordinates.  We will move through the shadow of a surface in the :math:`x,y`-plane in little increments of area :math:`dA`, and what we need to find is the exchange rate of those elements :math:`dA` with the surface that lies above.
 
@@ -19,7 +19,7 @@ We use :math:`\theta` for this calculation:
 
     dS = \frac{dA}{\cos \theta}
 
-A little piece of area on the surface larger than its projection on the :math:`xy`-plane by this factor.
+A little piece of area on the surface is larger than its projection on the :math:`xy`-plane by exactly this factor.
 
 Like any plane, we describe a tangent plane by its normal vector, :math:`\mathbf{n}`.  You can probably see that :math:`\mathbf{n}` makes the same angle :math:`\theta` with the :math:`z`-axis or :math:`\hat{\mathbf{k}}` unit vector.  (Think about what happens in the limiting case when the surface is horizontal, then :math:`\theta` is zero).
 

@@ -1,10 +1,10 @@
 .. _paraboloid sarea:
 
-################
-Paraboloid sarea
-################
+#######################
+Paraboloid Surface Area
+#######################
 
-A paraboloid is a solid whose vertical cross-section is a parabola (usually, it is centered along the :math:`z`-axis).  It may be oriented opening up, or down.  The cross-sections parallel to the :math:`xy`-plane are typically circles, though the shape factors for the parabolas in the :math:`xz`- and :math:`yz`-planes could be different, leading to an ellipse for the cross-sections.
+A paraboloid is a solid whose vertical cross-section is a parabola (usually, it is centered along the :math:`z`-axis).  It may be oriented opening up, or down.  The cross-sections parallel to the :math:`xy`-plane are typically circles, though the shape factors for the parabolas in the :math:`xz`- and :math:`yz`-planes could be different, giving ellipses in cross-section.
 
 Consider
 
@@ -12,7 +12,7 @@ Consider
 
     z = 2 - x^2 - y^2 
 
-This is a paraboloid that opens down (it gets big when either :math:`x` or :math:`y` get large).  The vertex is at :math:`z=2`.  When :math:`z=0`, the cross-section is a circle of radius :math:`r^2=2`.
+This is a paraboloid that opens down (it gets large and negative when either :math:`x` or :math:`y` get large).  The vertex is at :math:`z=2`.  When :math:`z=0`, the cross-section is a circle of radius :math:`r^2=2`.
 
 Usually, cylindrical coordinates are good for dealing with this solid.  For example, the volume element is :math:`dV = \ dz \ r \ dr \ d \theta`.
 

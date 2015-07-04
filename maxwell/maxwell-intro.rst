@@ -161,6 +161,8 @@ Since the integrals are equal, so are the integrands!
 
     \frac{1}{\epsilon_0} \rho  = \nabla \cdot \mathbf{E} 
 
+(Schey carefully points out that this is only true because Gauss's Law holds for any volume, so we cannot change the equality of the integral by changing :math:`dV`).
+
 =========================
 Gauss's law for magnetism
 =========================

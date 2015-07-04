@@ -7,7 +7,7 @@ Contents:
 .. toctree::
    :maxdepth: 2
    
-   doubleint
+   double-integrals
    change-vars
    sphere-volume
    parametrize-sphere

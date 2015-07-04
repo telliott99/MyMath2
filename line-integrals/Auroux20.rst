@@ -180,7 +180,13 @@ And the sum is, of course, 0.
 
 Consider :math:`\mathbf{F} = \langle -y,x \rangle`.  :math:`\mathbf{F}` is not the gradient of some function, because :math:`N_x \ne M_y`.
 
-Very important:  Curl:math:`(\mathbf{F}) = N_x - M_y`.  For a conservative vector field, the curl is zero.
+Very important:  
+
+.. math::
+
+    \text{Curl} \ (\mathbf{F}) = N_x - M_y 
+    
+For a conservative vector field, the curl is zero.
 
 - if :math:`\mathbf{F}` is conservative, :math:`\int_C \mathbf{F} \cdot d\mathbf{r} = 0` for all closed paths
 

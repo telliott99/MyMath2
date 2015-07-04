@@ -102,7 +102,9 @@ outer
 
 .. math::
 
-    \int_0^1 8x^5 - 2x^2 \ dx = \frac{8}{6}x^6 - \frac{2}{3}x^3 \bigg |_0^1 = \frac{8}{6} - \frac{2}{3} = \frac{2}{3} 
+    \int_0^1 8x^5 - 2x^2 \ dx = \frac{8}{6}x^6 - \frac{2}{3}x^3 \bigg |_0^1 
+    
+    = \frac{8}{6} - \frac{2}{3} = \frac{2}{3} 
 
 Try the line integral to check it.
 

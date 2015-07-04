@@ -50,19 +50,11 @@ which is basically impossible to remember except by using this convenient device
 
 .. math::
 
-    
-
-\begin{vmatrix}
-
-\hat{i}  &  \hat{j} & \hat{k} \\
-
-\frac{\partial}{\partial x}  &  \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
-
-P  &  Q & R \\
-
-\end{vmatrix} \ \
-
-\]
+    \begin{vmatrix}
+    \hat{i}  &  \hat{j} & \hat{k} \\
+    \frac{\partial}{\partial x}  &  \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+    P  &  Q & R \\
+    \end{vmatrix}
 
 In two dimensions :math:`R=0` and also :math:`P_z` and :math:`Q_z` are both zero, so this equation reduces to the one we saw above (substituting :math:`M` for :math:`P` and :math:`N` for :math:`Q`).
 
@@ -182,35 +174,19 @@ Another way to think about this is that we rotate by
 
 .. math::
 
-    
-
-\begin{bmatrix}
-
-\ 0  &  1 \\
-
--1  &   0  \\
-
-\end{bmatrix} \ \
-
-\begin{bmatrix}
-
-dx  \\
-
-dy  \\
-
-\end{bmatrix} \ \
-
-=
-
-\begin{vmatrix}
-
-\ \ dy  \\
-
--dx  \\
-
-\end{vmatrix} \ \
-
-\]
+    \begin{bmatrix}
+    \ 0  &  1 \\
+    -1  &   0  \\
+    \end{bmatrix}
+    \begin{bmatrix}
+    dx  \\
+    dy  \\
+    \end{bmatrix}
+    =
+    \begin{vmatrix}
+    \ \ dy  \\
+    -dx  \\
+    \end{vmatrix}
 
 so when we compute :math:`\mathbf{F} \cdot \ <dy,-dx>` we get :math:`\int_C M \ dy - N \ dx`.  Putting it all together, we have
 

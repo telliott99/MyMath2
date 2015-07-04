@@ -1,4 +1,4 @@
-doubleint
+.. _double-integrals:
 
 ##################
 Iterated Integrals
@@ -8,22 +8,26 @@ Iterated Integrals
 Double Integrals
 ================
 
-Double integrals start with a function of two variables, say :math:`x` and :math:`y`, :math:`f(x,y)`.  Think of this as a surface with height :math:`z=f(x,y)`, it could be a sloping roof or something more irregular, but still smooth.  Then the integration is performed over a region (an area) in the xy-plane that is the shadow of the surface.  The double integral is the volume contained between the plane and the surface at :math:`z`, within the bounds of the region :math:`R`.
+Double integrals start with a function of two variables, say :math:`x` and :math:`y`, :math:`f(x,y)`.  Think of this as a surface with height :math:`z=f(x,y)`, it could be a sloping roof or something curved, but still smooth.  
+
+Then the integration is performed over a region (an area) in the xy-plane that is directly underneath---in the *shadow* of the surface.  The double integral is the volume contained between the plane and the surface at :math:`z`, within the bounds of the region :math:`R`.
 
 .. math::
 
-    \int \int_R f(x,y) \ dA = ? 
+    \int \int_R f(x,y) \ dA
 
 +++++++
 Example
 +++++++
 
-As our first example, consider the region to be a rectangle with opposing corners at coordinates :math:`(0,0)` and :math:`(2,1)`.
+As our first example, consider the region to be a rectangle with corners at coordinates :math:`(0,0)` and :math:`(2,1)`.
 
 .. image:: /figs/dint1.png
    :scale: 50 %
 
-The idea of the integral is that if we slice the volume vertically, say with slices perpendicular to the :math:`x` axis, we have a standard integral to yield the area of the slice when integrating over :math:`dy` parallel to the slice, and then in a second integral we add up all of these area slices in the second integral over :math:`x`.  This is known as an *iterated integral*.
+The idea of the integral is that if we slice the volume vertically, with very small slices perpendicular to the :math:`x` axis, looking at each slice we will have a standard integral to yield the area of that slice when integrating over :math:`dy` parallel to it.
+
+In a second integral we add up all of these area slices in the second integral over :math:`x`.  This is known as an *iterated integral*.
 
 .. math::
 
@@ -31,7 +35,7 @@ The idea of the integral is that if we slice the volume vertically, say with sli
     
     = \int_y \int_x f(x,y) \ dx \ dy 
     
-    = \int_x \int_y f(x,y) \ dy \ dx = ? 
+    = \int_x \int_y f(x,y) \ dy \ dx
 
 
 Suppose
@@ -54,14 +58,14 @@ Here, the *inner* integral is the one we will do first, it is
 
     \int_{y=0}^{y=1} xy^2 \ dy 
 
-As usual for multivariable calculus, in this computation we treat one variable, :math:`x` in this case, as a constant.  So we have
+As usual for multivariable calculus, in this computation we treat everything except one variable, :math:`y` in this case, as a constant.  Since :math:`x` is a constant, we have
 
 .. math::
 
     \int_{y=0}^{y=1} xy^2 \ dy = \frac{1}{3} xy^3 \ \bigg |_0^1 = \frac{1}{3}x 
 
 
-We plug this result into the outer integral
+We plug this result into the outer integral, and for this second step, :math:`x` is a variable and there is no more :math:`y`:
 
 .. math::
 
@@ -91,13 +95,18 @@ and the outer integral is
     = \frac{2}{3}y^3 \ \bigg |_0^1 = \frac{2}{3} 
 
 
-They are the same, so that looks good.
+The result is the same, so that looks good.
 
 +++++++
 Example
 +++++++
 
-Let's do a second example.  Suppose we have the surface :math:`f(x,y) = x^2 + y^2`,  a paraboloid surface opening up.  Our region R is the *Cartesian product*
+Let's do a second example.  Suppose we have the surface :math:`f(x,y) = z = x^2 + y^2`,  a paraboloid surface opening up.  (All the cross-sections at :math:`z=c` where :math:`c` is some contant, yield a circle).
+
+.. image:: /figs/paraboloid.png
+   :scale: 50 %
+
+Our region R is the *Cartesian product*
 
 .. math::
 
@@ -316,7 +325,9 @@ In his introduction to double integrals describes the problem of finding the vol
     z = 1 - x^2 - y^2 
 
 
-Visualizing surfaces can be difficult, but here, just set :math:`x=0` or :math:`y=0` (separately), then you see that we have a parabola.  This solid is a paraboloid, opening downward, with its apex at :math:`(0,0,1)`.
+Visualizing surfaces can be difficult, but here, just set :math:`x=0` to view the cross-section of the surface with the :math:`y,z` plane, or :math:`y=0` (to see the :math:`x,z` plane).
+
+You should see that we have a parabola, opening downward, with its apex at :math:`(0,0,1)`.
 
 .. image:: /figs/dint.png
    :scale: 50 %
@@ -342,7 +353,11 @@ and the outer one is
     \int_0^1 \frac{2}{3} - x^2 \ dx 
 
 
-    = \frac{2}{3} x - \frac{1}{3}x^3  \ \bigg |_{0}^{1} = \frac{1}{3} 
+    = \frac{2}{3} x - \frac{1}{3}x^3  \ \bigg |_{0}^{1} = \frac{1}{3}
+
+This is not actually the answer we were looking for.  We have added in a negative volume for the part that lies below the :math:`x,y` plane.
+
+You should be suspicious that the "answer" does not have a factor of :math:`\pi` anywhere.
 
 The way to do this problem and actually obtain the volume of the quarter paraboloid is to set up the bounds of integration properly, over the quarter disk.  We can still have :math:`x=0 \rightarrow x=1` in the outer integral, but for the inner one we use :math:`y=0 \rightarrow y=\sqrt{1-x^2}`.  The changed upper bound makes all the difference.  Now, we have
 
@@ -429,9 +444,7 @@ The inner integral is just
 
 .. math::
 
-    \int_{x=y^2}^{x=y} \ dx  
-    
-    = x  \ \bigg |_{x=y^2}^{x=y} 
+    \int_{x=y^2}^{x=y} \ dx  = x  \ \bigg |_{x=y^2}^{x=y} 
     
     = y - y^2 
 
@@ -513,7 +526,7 @@ Substitute
 
 .. math::
 
-    x = a \ sin\theta, \ \ dx = a \ cos\theta \ d\theta 
+    x = a \sin \theta, \ \ dx = a \cos \theta \ d \theta 
 
 
 For the limits we will have, when :math:`x = 0 \to \theta = 0` and when :math:`x=a \to \theta=\pi/2`.  (Note that this substitution doesn't match the figure above, so the limits are a bit different.  We used :math:`x=a\ sin\theta`).
@@ -522,12 +535,12 @@ For the limits we will have, when :math:`x = 0 \to \theta = 0` and when :math:`x
 
     \int_{x=0}^{x=a}  \sqrt{a^2-x^2} \ dx 
     
-    = \int_{\theta=0}^{\theta=\pi/2} \sqrt{a^2-a^2sin^2\theta} \ a \ cos\ \theta \ d \theta 
+    = \int_{\theta=0}^{\theta=\pi/2} \sqrt{a^2 - a^2 \sin^2 \theta} \ a \cos \theta \ d \theta 
     
-    =  a^2 \int_{\theta=0}^{\theta=\pi/2} cos^2\theta \ d \theta 
+    =  a^2 \int_{\theta=0}^{\theta=\pi/2} \cos^2\theta \ d \theta 
 
 
-    = \frac{a^2}{2} \ [ \theta + sin \ \theta \ cos \ \theta \ ] \ \bigg |_{\theta=0}^{\theta=\pi/2} 
+    = \frac{a^2}{2} \ [ \theta + \sin \theta \cos \theta \ ] \ \bigg |_{\theta=0}^{\theta=\pi/2} 
     
     = \frac{a^2}{2} \frac{\pi}{2} 
     
@@ -634,21 +647,23 @@ and the outer integral is
 Example
 +++++++
 
-Finally, let's recall that in single-variable calculus, to obtain the area between two curves (:math:`g_1(x)` and :math:`g_2(x)`) for :math:`x = a \to b` we would integrate the two separately and subtract the lower from the upper.
-
-where the second is always larger than the first :math:`g_2(x) > g_1(x) \ \forall \ x \in [a,b]`.
+Finally, let's recall that in single-variable calculus, to obtain the area between two curves :math:`g_1(x)` and :math:`g_2(x)`, for :math:`x = a \to b` we would integrate the two separately and subtract the lower from the upper, if
 
 .. math::
 
-    A = \int_a^b g_2(x) - g_1(x) dx 
+    g_2(x) > g_1(x) \ \forall \ x \in [a,b]
 
+the second is always larger than the first.
+
+.. math::
+
+    A = \int_a^b g_2(x) - g_1(x) \ dx 
 
 In multi-variable calculus to get the area we integrate
 
 .. math::
 
     \int \int_R dA 
-
 
 over the appropriate bounds.  Here, that leads to
 
