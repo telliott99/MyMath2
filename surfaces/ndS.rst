@@ -185,6 +185,18 @@ As Auroux says, what happens if I take the unit normal :math:`\mathbf{n}`, and I
 
 .. math::
 
-    \hat{\mathbf{n}} \ dS  = \frac{\mathbf{N}}{\mathbf{N} \cdot \hat{\mathbf{k}}} \ dA 
+    \hat{\mathbf{n}} \ dS  = \frac{\mathbf{N}}{\mathbf{N} \cdot \hat{\mathbf{k}}} \ dA
+    
+    = \frac{\mathbf{N}}{\mathbf{N} \cdot \hat{\mathbf{k}}} \ dx \ dy 
 
-And again, this is "within sign", depending on how :math:`\hat{\mathbf{n}}` is oriented.
+Again, this is "within sign", depending on how :math:`\hat{\mathbf{n}}` is oriented.
+
+We could modify this last approach to project onto the :math:`x,z`-plane or the :math:`y,z`-plane.  In the latter case we would substitute:
+
+.. math::
+    
+    \frac{\mathbf{N}}{\mathbf{N} \cdot \hat{\mathbf{i}}} \ dy \ dz
+
+But I usually prefer to just rotate the problem so that it has the standard orientation.
+
+

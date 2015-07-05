@@ -228,7 +228,7 @@ So we have the symbol :math:`\nabla` which we use as an operator
 
     \nabla = \frac{\partial}{\partial x}, \frac{\partial}{\partial y}, \frac{\partial}{\partial z} 
 
-We have already used this in defining the \emph{gradient} of :math:`f`
+We have already used this in defining the *gradient* of :math:`f`
 
 .. math::
 
@@ -258,8 +258,13 @@ This determinant has three components
 
 .. math::
 
-    | (\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}) - (\frac{\partial R}{\partial x} - \frac{\partial P}{\partial z}) +
-
-    (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) |
+    \langle (\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}), - (\frac{\partial R}{\partial x} - \frac{\partial P}{\partial z}), (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) \rangle
+    
+    = \langle R_y - Q_z, P_z - R_x, Q_x - P_y \rangle
 
 What we have in Green's Theorem (with different letters, substitute N for Q and M for P), is a vector with only :math:`x` and :math:`y` components and hence only one of the terms.
+
+.. math::
+
+    = \langle 0, 0, Q_x - P_y \rangle = \langle 0, 0, N_x - M_y \rangle
+    

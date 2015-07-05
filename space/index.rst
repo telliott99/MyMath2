@@ -1,12 +1,14 @@
-######################
-Flux and Curl in Space
-######################
+#############
+Curl in Space
+#############
 
 Contents:
 
 .. toctree::
    :maxdepth: 2
 
+   2D-divergence-example
+   divergence-derivation
    flux-space
    stokes-div
    stokes-example

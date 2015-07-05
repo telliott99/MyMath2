@@ -44,7 +44,7 @@ A second approach is to actually calculate the curl
 
     = \langle x - x, y - y, z - z \rangle = \langle 0, 0, 0 \rangle 
 
-and the dot product with \emph{any} :math:`\hat{\mathbf{n}}` is zero.
+and the dot product with *any* :math:`\hat{\mathbf{n}}` is zero.
 
 =========
 Problem 2
@@ -62,7 +62,7 @@ where :math:`C` is the intersection of the unit sphere :math:`x^2 + y^2 + z^2 = 
 
     \nabla \times \mathbf{F} = \langle 2 - 2, 2 - 1, 1 - 1 \rangle = \langle 0, 1, 0 \rangle  
 
-What is :math:`\hat{\mathbf{n}} \ dS`?  Our surface is a part of the plane.  Notice that :math:`(0,0,0)` is a solution of the equation for the plane, so it goes through the origin.  Therefore, the intersection is a circle of radius :math:`1`.  The plane has normal vector :math:`\mathbf{n} = \langle 1,2,2 \rangle` and \emph{unit normal} :math:`\hat{\mathbf{n}} = 1/3 \ \mathbf{n}` so
+What is :math:`\hat{\mathbf{n}} \ dS`?  Our surface is a part of the plane.  Notice that :math:`(0,0,0)` is a solution of the equation for the plane, so it goes through the origin.  Therefore, the intersection is a circle of radius :math:`1`.  The plane has normal vector :math:`\mathbf{n} = \langle 1,2,2 \rangle` and *unit normal* :math:`\hat{\mathbf{n}} = 1/3 \ \mathbf{n}` so
 
 .. math::
 

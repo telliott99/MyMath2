@@ -16,10 +16,9 @@ Contents:
    integration/index
    integration-apps/index
    line-integrals/index
+   green-plane/index
    surfaces/index
-   divergence/index
-   flux-curl-plane/index
-   flux-curl-space/index
+   space/index
    maxwell/index
 
 

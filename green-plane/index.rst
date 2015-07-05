@@ -12,3 +12,5 @@ Contents:
    2D-curl-example
    Green-example
    plane-summary
+   potential
+   
