@@ -1,4 +1,4 @@
-.. _kepler2:
+.. _kepler:
 
 ################
 Kepler's 2nd Law

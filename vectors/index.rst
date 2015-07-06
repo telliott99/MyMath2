@@ -17,6 +17,6 @@ Contents:
    parametric-lines
    matrix-multiplication
    matrix-inverse
-   kepler2
+   kepler
    projections
    matrix-projections

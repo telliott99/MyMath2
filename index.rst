@@ -12,6 +12,7 @@ Contents:
    :maxdepth: 2
 
    vectors/index
+   kepler/index
    differentiation/index
    integration/index
    integration-apps/index
