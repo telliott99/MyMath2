@@ -16,9 +16,9 @@ But in an elliptical orbit, the planet's velocity is in the same direction as th
 
     y = \sin \theta = \sin \omega t 
 
-    \mathbf{r}(t) = \ \langle x(t),y(t) \rangle \ 
+    \mathbf{r}(t) = \ \langle x(t),y(t) \rangle
 
-    = \ \langle  \cos \omega t , \sin \omega t \rangle 
+    = \langle \cos \omega t ,\sin \omega t \rangle 
 
     \mathbf{v} = \dot{\mathbf{r}} 
 
@@ -234,7 +234,9 @@ So what, you say.  Well, let's look at the position vector, which can be written
 
 .. math::
 
-    \mathbf{r} = \ \langle x,y \rangle \ = \ \langle a \cos t,b \sin t \rangle \ 
+    \mathbf{r} = \langle x,y \rangle \ 
+    
+    = \langle a \cos t,b \sin t \rangle
 
 Now, the tangent to the ellipse is precisely the direction in which a particle at :math:`(x,y)` is currently moving on the ellipse.  The tangent vector points in the same direction as the velocity vector, but :math:`\mathbf{v}` is just the time-derivative of the position vector.
 

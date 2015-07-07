@@ -1,8 +1,8 @@
 .. _kepler7:
 
-###############
-Kepler:  Hartig
-###############
+######
+Hartig
+######
 
 This is a derivation of Kepler's laws from a class handout I found on the web for Math 304 by Hartig.
 

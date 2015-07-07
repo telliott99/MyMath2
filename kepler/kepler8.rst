@@ -1,14 +1,12 @@
 .. _kepler8:
 
-####################
-Kepler:  Fitzpatrick
-####################
+###########
+Fitzpatrick
+###########
 
 This is a derivation of Kepler's laws from a book I found on the web for Fitzpatrick's course on Mechanics.
 
-\section{}
-
-He starts by establishing unit vectors in polar coordinates as :math:`\mathbf{e_r}` and :math:`\mathbf{e_{\theta}}` and then parametrically
+He starts by establishing unit vectors in polar coordinates as :math:`\mathbf{e_r}` and :math:`\mathbf{e_{\theta}}` and then parametrically (see :ref:`here <kepler3>`)
 
 .. math::
 
@@ -84,7 +82,9 @@ That is,
 
 At this point he goes through the standard analysis to obtain that the area swept out in a small time :math:`\delta A/\delta t = h/2`.  I think we can skip this part.
 
-\section{}
+======
+part 2
+======
 
 This derivation has an unusual approach to using the information from the inverse square law.  Define a new radial variable, the inverse of :math:`r`
 

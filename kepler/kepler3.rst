@@ -1,8 +1,8 @@
 .. _kepler3:
 
-###########
-Coordinates
-###########
+#######
+Vectors
+#######
 
 Here is a sketch of the situation.
 
@@ -44,25 +44,31 @@ At any given time, :math:`\mathbf{r}` makes an angle :math:`\theta` with the :ma
 
     \mathbf{u_{\theta}} =  \ \langle -\sin \theta, \cos \theta \rangle 
 
-Verify that the cross-product is zero and that both vectors are unit length.  Now, differentiate :math:` \mathbf{u_r}` and :math:`\mathbf{u_{\theta}}` (and recall that :math:`\theta` is also a function of time):
+We verify that the cross-product is zero and that both vectors are unit length.
+
+Now, differentiate :math:`\mathbf{u_r}` and :math:`\mathbf{u_{\theta}}` (recalling that :math:`\theta` is a function of time as well):
 
 .. math::
 
-    \frac{d}{dt} \ \mathbf{u_r} = \dot{\mathbf{u}}_\mathbf{r} = \frac{d\theta}{dt} \ \langle -\sin \theta, \cos \theta \rangle =  \frac{d\theta}{dt} \ \mathbf{u_{\theta}} 
+    \frac{d}{dt} \ \mathbf{u_r} = \dot{\mathbf{u}}_\mathbf{r} = \frac{d\theta}{dt} \ \langle -\sin \theta, \cos \theta \rangle =  - \frac{d\theta}{dt} \ \mathbf{u_{\theta}} 
 
     \frac{d}{dt} \ \mathbf{u_{\theta}} = \dot{\mathbf{u}}_\mathbf{\theta} =  \frac{d\theta}{dt} \ \langle -\cos \theta, -\sin \theta \rangle =  \frac{d\theta}{dt} \ \mathbf{u_r} 
 
-We can also get parametric expressions for the velocity
+With this preparation, we can get an expressions for the velocity
 
 .. math::
 
-    \mathbf{v} = \dot{\mathbf{r}} = \frac{d}{dt} \ (r \mathbf{u_r}) = \frac{dr}{dt} \mathbf{u_r} + r \frac{d \theta}{dt}  \mathbf{u_{\theta}} 
+    \mathbf{v} = \dot{\mathbf{r}} = \frac{d}{dt} \ (r \mathbf{u_r}) 
+    
+    = \frac{dr}{dt} \mathbf{u_r} + r \frac{d \theta}{dt}  \mathbf{u_{\theta}} 
 
 and (with a little work) we can get the acceleration
 
 .. math::
 
-    \mathbf{a} = \dot{\mathbf{v}} = \ddot{\mathbf{r}} = \frac{d}{dt} \ (\frac{dr}{dt} \mathbf{u_r} + r \frac{d \theta}{dt}  \mathbf{u_{\theta}}) 
+    \mathbf{a} = \dot{\mathbf{v}} = \ddot{\mathbf{r}} 
+    
+    = \frac{d}{dt} \ (\frac{dr}{dt} \mathbf{u_r} + r \frac{d \theta}{dt}  \mathbf{u_{\theta}}) 
 
     = \frac{d^2r}{dt^2} \mathbf{u_r} + \frac{dr}{dt} \dot{\mathbf{u}}_\mathbf{r} + \frac{dr}{dt} \frac{d \theta}{dt}  \mathbf{u_{\theta}} + r \frac{d^2\theta}{dt^2} \mathbf{u_{\theta}} + r \frac{d\theta}{dt} \dot{\mathbf{u}}_\mathbf{\theta}  
 
@@ -76,7 +82,7 @@ Group common terms together
 
 .. math::
 
-    = (\frac{d^2r}{dt^2} + r (\frac{d\theta}{dt})^2 ) \mathbf{u_r}  + (2 \ \frac{dr}{dt} \frac{d\theta}{dt} + r \frac{d^2\theta}{dt^2}) \mathbf{u_{\theta}}  
+    = \ [ \ \frac{d^2r}{dt^2} + r (\frac{d\theta}{dt})^2 \ ] \ \mathbf{u_r}  + \ [ \ 2 \ \frac{dr}{dt} \frac{d\theta}{dt} + r \frac{d^2\theta}{dt^2} \ ] \ \mathbf{u_{\theta}}  
 
 Now for a trick, look at the factors multiplying :math:`\mathbf{u_{\theta}}` and recognize that
 
@@ -88,7 +94,7 @@ Therefore, the cofactors for :math:`\mathbf{u_{\theta}}` can be re-written as
 
 .. math::
 
-    \frac{1}{r} (\frac{d}{dt} ( r^2 \frac{d\theta}{dt}) 
+    \frac{1}{r} \ [ \ \frac{d}{dt} ( r^2 \frac{d\theta}{dt}) \ ]
 
 and since if the acceleration is to be only radial (pointed toward the sun), this term must be equal to zero.
 

@@ -1,8 +1,8 @@
 .. _kepler6:
 
-#####################
-Kepler:  Varberg pt 2
-#####################
+#########
+Varberg 2
+#########
 
 The last part of Varberg's derivation is about K3.  To prove:
 

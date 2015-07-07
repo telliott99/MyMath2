@@ -1,8 +1,8 @@
 .. _kepler5:
 
-################
-Kepler:  Varberg
-################
+#########
+Varberg 1
+#########
 
 K2 says that orbits "sweep out equal areas in equal times" or equivalently, that :math:`dA/dt = 0`.  So we start from Newton's force directed toward the sun, the centripetal force, and we will show that the motion stays in a plane, and also implies K2.
 

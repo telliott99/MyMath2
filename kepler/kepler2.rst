@@ -4,11 +4,11 @@
 Feynman
 #######
 
-Richard Feynman gave a famous series of talks at Cornell in 1964 that were videotaped and transcribed into a book.  Bill Gates later purchased them and put them on the web, unfortunately with some Microsoft DRM.  Still, I have the book, called *The Character of Physical Law*.  This argument is from Chapter 2, \emph{The Relation of Mathematics to Physics}.
+Richard Feynman gave a famous series of talks at Cornell in 1964 that were videotaped and transcribed into a book.  Bill Gates later purchased them and put them on the web, unfortunately with some Microsoft DRM.  Still, I have the book, called *The Character of Physical Law*.  This argument is from Chapter 2, *The Relation of Mathematics to Physics*.
 
 It depends on a tiny bit of calculus---specifically, the product rule for differentiation.  It also uses the fact that the product rule is valid for vector cross products.  (See my short write-up on the cross-product for a proof).
 
-The rule is that if we have two vectors :math:`\mathbf{a}` and :math:`\mathbf{b}` which are changing (i.e. they are functions of time), then
+The rule is that if we have two vectors :math:`\mathbf{a}` and :math:`\mathbf{b}` which are changing (i.e. their individual components are functions of time), then
 
 .. math::
 
@@ -24,7 +24,7 @@ Or, as the physicists would write it, using Newton's dot notation for the time-d
 
 .. math::
 
-    \mathbf{v} = \dot{\mathbf{r}} 
+    \dot{\mathbf{r}} = \mathbf{v}
 
 We are interested in the area of the triangle formed by the vectors :math:`\mathbf{r}` and :math:`\dot{\mathbf{r}}` over a small interval of time.  The area swept out is constant, as Newton showed, and we will prove again here.
 
@@ -32,9 +32,11 @@ A nice feature of the vector cross-product is that it provides (twice) this area
 
 .. math::
 
-    A =  \mathbf{r} \times \dot{\mathbf{r}} = |\mathbf{r}| |\dot{\mathbf{r}}| \sin \theta   
+    A =  | \mathbf{r} \times \dot{\mathbf{r}} | = |\mathbf{r}| |\dot{\mathbf{r}}| \sin \theta   
 
 where :math:`\theta` is the angle between :math:`\mathbf{r}` and :math:`\dot{\mathbf{r}}`, and :math:`A` is the little bit of additional area.
+
+(The direction of the cross-product is perpendicular to the directions of the two input vectors:  in this case straight-up.  Since the force acts along :math:`r`, that doesn't change during the motion.)
 
 Our hypothesis is that :math:`A` is the same no matter where the planet is in its orbit.  Another way to say the same thing is that A doesn't change with time
 
@@ -64,9 +66,9 @@ Any vector points in the same direction as itself, so the first term is certainl
 
     \dot{\mathbf{r}} \times \dot{\mathbf{r}} \ = 0 
 
-Next, recall that the second derivative with respect to time of the position is the acceleration vector.  According to Newton's second law, the force of gravity points toward the sun, radially.
+Next, recall that the second derivative of the position with respect to time is the acceleration vector.  According to Newton's second law, the force of gravity points toward the sun, radially.
 
-But of course the position vector also points out radially from the sun.  :math:`\mathbf{r}` and :math:`\ddot{\mathbf{r}}` are in the same direction (the opposite direction \emph{is} the same direction, multiplied by :math:`-1`), so the cross-product is again zero.
+But of course the position vector also points out radially from the sun.  :math:`\mathbf{r}` and :math:`\ddot{\mathbf{r}}` are in the same direction (the opposite direction *is* the same direction, multiplied by :math:`-1`), so the cross-product is again zero.
 
 .. math::
 
