@@ -16,5 +16,6 @@ Contents:
    kepler6
    kepler7
    kepler8
+   kepler-strang
    kepler9
    kepler10
