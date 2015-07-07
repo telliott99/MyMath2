@@ -44,6 +44,66 @@ where :math:`n` could be very large, even infinite.  However, a lot of work is d
 
     \mathbf{v} =  \langle v_1, v_2 \rangle
 
+==========
+Arithmetic
+==========
+
+Vectors can be added together, and subtracted as well.  They can also be multiplied by a real number.  When we're talking about vectors we usually call a plain real number a *scalar*.  Vectors can also multiply vectors, we'll get to that in later sections.
+
+Addition and subtraction are done as you'd expect, working on each component in turn:
+
+.. math::
+
+    \mathbf{u} = \langle u_1, u_2 \rangle
+
+    \mathbf{v} = \langle v_1, v_2 \rangle
+    
+    \mathbf{u} + \mathbf{v} = \langle u_1 + v_1, u_2 + v_2 \rangle
+
+    \mathbf{u} - \mathbf{v} = \langle u_1 - v_1, u_2 - v_2 \rangle
+
+Multiplication by a scalar :math:`c` is just:
+
+.. math::
+
+    c \ \mathbf{u} = \langle c u_1, c u_2 \rangle
+
+Suppose :math:`c=-1`:
+
+.. math::
+
+    (-1) \ \mathbf{u} = - \mathbf{u} = (-1) (\langle u_1, u_2 \rangle) = \langle -u_1, -u_2 \rangle
+
+As expected:
+
+.. math::
+
+    \mathbf{u} - \mathbf{u} = \mathbf{0}
+
+Note that this is the zero *vector*
+
+.. math::
+
+    \mathbf{0} = \langle 0, 0 \rangle
+
+If a triangle is drawn with one vertex at the origin and :math:`u` and :math:`v` as the two sides extending away from the origin, then third side can also be described in vector language.  
+
+If :math:`w` extends from the point :math:`u_1,u_2` *toward* :math:`v_1,v_2`, then
+
+.. math::
+
+    \mathbf{u} + \mathbf{w} = \mathbf{v}
+
+and
+
+.. math::
+
+    \mathbf{u} = \mathbf{v} - \mathbf{w}
+
+============
+Unit vectors
+============
+
 As I've suggested, the vector :math:`\mathbf{v}` can be thought of as an arrow that goes from the origin to the point :math:`(v_1,v_2)`.  It has both length and direction.  Its length is given (from the Pythagorean Theorem) by
 
 .. math::
@@ -54,14 +114,13 @@ As I've suggested, the vector :math:`\mathbf{v}` can be thought of as an arrow t
 
 Since this :math:`v` is just a number, we do not use the vector symbol or bold it.
 
-and its direction is
+Its direction is
 
 .. math::
 
     \frac{v_2}{v_1} = tan \ \theta, \ \ \ \  \theta = tan^{-1}(\frac{v_2}{v_1})
 
 where :math:`\theta` is the angle the vector makes (going counter-clockwise) with the positive :math:`x`-axis.
-
 Any vector can be converted into a *unit vector*, a vector of length one, by dividing by its length.  For example if :math:`\mathbf{v} = \langle 1,2\rangle` then 
 
 .. math::
@@ -72,11 +131,19 @@ Any vector can be converted into a *unit vector*, a vector of length one, by div
 
 is a unit vector pointing in the same direction as :math:`\mathbf{v}`.  The "hat" symbol indicates a unit vector:  :math:`\mathbf{\hat{v}}`.
 
+The standard unit vectors (sometimes called a *basis*) are 
+
+.. math::
+
+    \mathbf{\hat{i}} = \langle 1,0 \rangle
+    
+    \mathbf{\hat{j}} = \langle 0,1 \rangle
+
 The line through the origin with slope :math:`m = v_2/v_1` and equation
 
 .. math::
 
-    y = m(x)
+    y = mx
 
 can be thought of as being the extension of vector :math:`\mathbf{v}` obtained by multiplying some :math:`t` times :math:`\mathbf{v}` for all :math:`t \in \mathbb{R}`.
 

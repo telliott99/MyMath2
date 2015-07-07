@@ -4,7 +4,7 @@
 Dot Product
 ###########
 
-The *dot product* is one of two ways to "multiply" two vectors together (the other way being the *cross product*).  The dot product is easy to compute, and it measures something fundamental about the angle between the two vectors.  
+The *dot product* is one of two ways to "multiply" two vectors together (the other way being the *cross product*).  The dot product is easy to compute, and it measures something fundamental---the angle between the two vectors.  
 
 Two very useful properties are first, that the dot product is zero when two vectors are orthogonal (perpendicular) to one another.  And second:  the dot product of any vector with a *unit vector* (vector of length one), measures the component of that vector that is in the same direction as the unit vector.  This works for any unit vector, not just the standard "basis".
 
@@ -18,7 +18,7 @@ Define two vectors :math:`\mathbf{a}` and :math:`\mathbf{b}`:
 
 Geometrically, we might think of these as being one vector extending from the origin in the :math:`x,y`-plane to the point :math:`(a_1,a_2)`, and the other vector extending from the origin to :math:`(b_1,b_2)`.
 
-The dot product is the sum of the products of the individual terms
+The dot product is **the sum of the products of the individual terms**:
 
 .. math::
 
@@ -38,7 +38,7 @@ We can extend this to a pair of vectors in :math:`n`-dimensional space
 
 The dot product of two vectors is a number, in vector terminology it is a *scalar*.  The result may be positive, negative or even zero.
 
-Notice that the two vectors being multiplied (whose dot product is computed) must have the same dimension, the same :math:`n`.  Also, the result of the multiplication---the dot product---is a number.  This is in contrast to another form of vector multiplication (the cross-product) which yields a vector as the result.
+Notice that the two vectors being multiplied (whose dot product is computed) must have the same dimension, the same :math:`n`.  Also, the fact that the result of the multiplication---the dot product---is a number is in contrast to the other form of vector multiplication (the cross-product) which yields a vector as the result.
 
 ===============
 Some properties
@@ -181,7 +181,7 @@ To simplify the notation, I often write :math:`a` for :math:`|\mathbf{a}|`.  Thu
 Relation to the angle
 =====================
 
-Now for the main idea.  Suppose we draw two vectors :math:`\mathbf{a}` and :math:`\mathbf{b}` in :math:`\mathbb{R}^2` with their tails at the same point.  Designate the angle between them as :math:`\theta` and the vector representing the side opposite as :math:`\mathbf{c}`. 
+Now for the main idea of the dot product.  Suppose we draw two vectors :math:`\mathbf{a}` and :math:`\mathbf{b}` in :math:`\mathbb{R}^2` with their tails at the same point.  Designate the angle between them as :math:`\theta` and the vector representing the side opposite as :math:`\mathbf{c}`. 
 
 .. image:: /figs/dot1.png
    :scale: 50 % 
@@ -200,7 +200,7 @@ Compute the dot product of :math:`\mathbf{c}` with itself
 
     \mathbf{c} \cdot \mathbf{c} = ( \mathbf{a} -  \mathbf{b}) \cdot ( \mathbf{a} -  \mathbf{b})
 
-Recalling the result from above, this is
+Recalling the result from above, this is equal to
 
 .. math::
 
@@ -270,9 +270,92 @@ How to find a vector in :math:`\mathbb{R}^5` perpendicular to :math:`\langle 1,1
 
 Any vector of the form :math:`\langle 0,0,0,0,k \rangle` will do, where :math:`k` is some real number.
 
-====================
-Alternate derivation
-====================
+==========
+Projection
+==========
+
+If :math:`|\mathbf{a}| = a = 1` we say that :math:`\mathbf{a}` is a *unit* vector.  In that case
+
+.. math::
+
+    \mathbf{b} \cdot \mathbf{a} = b \cos \theta
+
+Looking at the figure, :math:`b \cos \theta` is the length of the *projection* of :math:`\mathbf{b}` on :math:`\mathbf{a}`.  (Recall that the dot product is a scalar---a number---and not a vector).
+
+.. image:: /figs/dot3.png
+   :scale: 50 % 
+
+The result, :math:`\mathbf{b} \cdot \mathbf{a} = b \cos \theta`, is the length of the part of :math:`\mathbf{b}` that extends in the same direction as :math:`\mathbf{a}`.  The corresponding vector is 
+
+.. math::
+
+    \mathbf{p} = (\mathbf{b} \cdot \mathbf{a}) \ \mathbf{a}
+    
+if :math:`\mathbf{a}` is a unit vector.
+
+The other component of :math:`\mathbf{b}` is the *error*, :math:`\mathbf{e}`.  It is the part of :math:`\mathbf{b}` that is perpendicular to the projection :math:`\mathbf{p}`.
+
+.. math::
+
+    \mathbf{b} = \mathbf{p} + \mathbf{e}
+
+We compute :math:`\mathbf{e}` as the difference :math:`\mathbf{b} -  \mathbf{p}`.
+
+The formula given here is a simplification for the situation in which :math:`\mathbf{a}` is a unit vector.  If not, the complete formula is:
+
+.. math::
+
+    \mathbf{p} = \frac{\mathbf{b} \cdot \mathbf{a}}{\mathbf{a} \cdot \mathbf{a}} \ \mathbf{a}
+    
+The result is the measure of how much :math:`\mathbf{b}` goes in the same direction as :math:`\mathbf{a}` times the unit vector in the :math:`\mathbf{a}` direction.
+
+(Sometimes I look at the :math:`\mathbf{a} \cdot \mathbf{a} = a^2` in the denominator and think there must be a mistake, since we need only one :math:`a` to convert :math:`\mathbf{a}` into a unit vector.  But it's not a mistake as the derivation will show).
+
+=====
+Proof
+=====
+
+We are given vectors :math:`\mathbf{a}` and :math:`\mathbf{b}` and our task is to find the projection of :math:`\mathbf{b}` onto :math:`\mathbf{a}`, which amounts to finding a scalar :math:`t` that when multiplied by :math:`\mathbf{a}` produces :math:`\mathbf{p}` such that
+
+.. math::
+
+    t \ \mathbf{a} = \mathbf{p}
+
+As we said, :math:`\mathbf{b}` can be decomposed into two vectors, one parallel to :math:`\mathbf{a}` and one perpendicular:
+
+.. math::
+  
+    \mathbf{p} + \mathbf{e} = \mathbf{b}
+
+    t \ \mathbf{a} + \mathbf{e} = \mathbf{b}
+
+We will use the fact that :math:`\mathbf{a}` and :math:`\mathbf{e}` are *orthogonal*, perpendicular to each other, so their dot product is zero.  Form the dot product of :math:`\mathbf{a}` with both sides of the equation above:
+
+.. math::
+
+    \mathbf{a} \cdot (t \ \mathbf{a} + \mathbf{e} ) = \mathbf{a} \cdot \mathbf{b}
+
+We showed above that the dot product is distributive over addition so this is equal to 
+
+.. math::
+
+    \mathbf{a} \cdot t \ \mathbf{a} + \mathbf{a} \cdot  \mathbf{e} = \mathbf{a} \cdot \mathbf{b}
+
+but :math:`\mathbf{a} \cdot  \mathbf{e} = 0` so
+
+.. math::
+
+    \mathbf{a} \cdot t \ \mathbf{a} = \mathbf{a} \cdot \mathbf{b}
+    
+    t \mathbf{a} \cdot  \mathbf{a} = \mathbf{a} \cdot \mathbf{b}
+    
+    t = \frac{\mathbf{a} \cdot \mathbf{b}}{\mathbf{a} \cdot \mathbf{a}}
+    
+If :math:`\mathbf{a}` is a unit vector, then :math:`\mathbf{a} \cdot  \mathbf{a} = 1` and we obtain the formula above.
+
+=======================================
+Alternate derivation of the dot product
+=======================================
 
 Here is another approach which doesn't depend on knowing the law of cosines, but instead requires the rule for subtraction of cosines
 
@@ -320,43 +403,3 @@ but since :math:`\theta = \theta_a - \theta_b`
 .. math::
 
     \mathbf{a} \cdot \mathbf{b} = ab \cos \theta
-
-==========
-Projection
-==========
-
-If :math:`|\mathbf{a}| = 1` we say that :math:`\mathbf{a}` is a *unit* vector.  In that case
-
-.. math::
-
-    \mathbf{b} \cdot \mathbf{a} = |\mathbf{b}| \cos \theta
-
-Looking at the figure, :math:`|\mathbf{b}| \cos \theta` is the length of the *projection* of :math:`\mathbf{b}` on :math:`\mathbf{a}`.  (Recall that the dot product is a scalar---a number---and not a vector).
-
-.. image:: /figs/dot3.png
-   :scale: 50 % 
-
-The result, :math:`\mathbf{b} \cdot \mathbf{a} = |\mathbf{b}| \cos \theta`, is the length of the part of :math:`\mathbf{b}` that extends in the same direction as :math:`\mathbf{a}`.  The corresponding vector is 
-
-.. math::
-
-    \mathbf{p} = (\mathbf{b} \cdot \mathbf{a}) \ \mathbf{a}
-    
-if :math:`\mathbf{a}` is a unit vector.
-
-The other component of :math:`\mathbf{b}` is the part that is perpendicular to :math:`\mathbf{p}`
-
-.. math::
-
-    \mathbf{p} + \mathbf{e} = \mathbf{b}
-
-We compute :math:`\mathbf{e}` as the difference :math:`\mathbf{b} -  \mathbf{p}`.  :math:`\mathbf{e}` is the part of :math:`\mathbf{b}` that is perpendicular to the projection.
-
-The formula given here is a simplification for the situation in which :math:`\mathbf{a}` is a unit vector.  If not, the complete formula is:
-
-.. math::
-
-    \mathbf{p} = \frac{\mathbf{b} \cdot \mathbf{a}}{\mathbf{a} \cdot \mathbf{a}} \ \mathbf{a}
-    
-The result is the measure of how much :math:`\mathbf{b}` goes in the same direction as :math:`\mathbf{a}` times the unit vector in the :math:`\mathbf{a}` direction.
-
